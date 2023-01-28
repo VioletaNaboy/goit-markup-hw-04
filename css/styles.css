@@ -282,7 +282,7 @@ img {
   gap: 24px;
 }
 .item-customers {
-  flex-basis: calc((100%- (24px * 5)) / 6);
+  width: 168px;
 }
 .link-customers {
   display: flex;
