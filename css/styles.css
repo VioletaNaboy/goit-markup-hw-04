@@ -18,6 +18,8 @@ body {
   --light-logo-color: #f4f4fd;
   --pressed-state-color: #404bbf;
   --borders-color: #e7e9fc;
+  --helper-light: #8e8f99;
+  --success-green: #31d0aa;
 }
 .visually-hidden {
   position: absolute;
@@ -138,10 +140,20 @@ img {
 /* Main content */
 /* Hero Section */
 .hero {
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/background.jpg);
   background-color: var(--dark-logo-color);
+  max-width: 1440px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   padding-top: 188px;
   padding-bottom: 188px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -179,8 +191,17 @@ img {
   gap: 24px;
 }
 .list-item-feature {
-  width: 264px;
+  flex-basis: calc((100%- (24px * 3)) / 4);
 }
+.icon-feature-background {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 8px;
+  background: var(--light-logo-color);
+  border-radius: 4px;
+  text-align: center;
+}
+
 .item-title.feature {
   margin-bottom: 8px;
 }
@@ -209,8 +230,6 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   text-align: center;
-  border-radius: 0px 0px 4px 4px;
-  background-color: #ffffff;
 }
 
 .item-title {
@@ -222,10 +241,69 @@ img {
   margin-bottom: 8px;
 }
 .list-item-team {
-  flex-basis: calc((100%-24px * 3) / 4);
+  flex-basis: calc((100%- (24px * 3)) / 4);
+  border-radius: 0px 0px 4px 4px;
+  background-color: #ffffff;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+.list-social {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.link-social {
+  background-color: var(--prymary-brand-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--light-logo-color);
+}
+
+.link-social:hover,
+.link-social:focus {
+  background-color: var(--pressed-state-color);
+}
+.icon-social {
+  fill: currentColor;
+}
+
+/* Section Customers */
+.section-customers {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+.list-customers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.item-customers {
+  flex-basis: calc((100%- (24px * 5)) / 6);
+}
+.link-customers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  border: 1px solid var(--helper-light);
+  border-radius: 4px;
+  color: var(--helper-light);
+}
+.link-customers:hover,
+.link-customers:focus {
+  color: var(--pressed-state-color);
+  border-color: var(--pressed-state-color);
+}
+.icon-logo {
+  fill: currentColor;
+}
+
 /* Section Portfolio */
 .portfolio {
   padding-top: 96px;
@@ -234,7 +312,6 @@ img {
 .list-button {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 24px;
   margin-bottom: 72px;
 }
@@ -265,14 +342,31 @@ img {
   column-gap: 24px;
 }
 
-.list-item-galery {
-  flex-basis: calc((100% - 24px * 2) / 3);
+.list-item-gallery {
+  flex-basis: calc((100%- (24px * 2)) / 3);
 }
 
 .gallery-wraper {
   padding: 32px 16px 32px 16px;
   border: 1px solid var(--borders-color);
   border-top: none;
+}
+.link-gallery:hover > .gallery-wraper,
+.link-gallery:focus > .gallery-wraper {
+  border: 0.5px solid var(--light-logo-color);
+  border-top: none;
+}
+.link-gallery {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+.link-gallery:hover,
+.link-gallery:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /* Footer styles */
@@ -286,4 +380,35 @@ img {
   color: var(--borders-color);
   width: 264px;
   margin-top: 16px;
+  margin-right: 120px;
+}
+.container-footer {
+  display: flex;
+  align-items: center;
+}
+.footer-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.link-social-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--light-logo-color);
+}
+.list-social-footer {
+  display: flex;
+  gap: 16px;
+}
+
+.link-social-footer:hover,
+.link-social-footer:focus {
+  background-color: var(--success-green);
 }
