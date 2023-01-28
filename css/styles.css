@@ -191,7 +191,7 @@ img {
   gap: 24px;
 }
 .list-item-feature {
-  flex-basis: calc((100%- (24px * 3)) / 4);
+  width: 264px;
 }
 .icon-feature-background {
   padding-top: 24px;
@@ -241,7 +241,7 @@ img {
   margin-bottom: 8px;
 }
 .list-item-team {
-  flex-basis: calc((100%- (24px * 3)) / 4);
+  width: 264px;
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
